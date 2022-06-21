@@ -1,10 +1,28 @@
+import { useState } from 'react';
+import Greeting from './components/Greeting';
+import Todolist from './components/Todolist';
 import './App.css'
 function App() {
 
-
+  const userName = 'Janos'
+  const [todos, setTodos] = useState([
+    {
+      task: 'Food shopping',
+      isDone: false
+    },
+    {
+      task: 'Project',
+      isDone: false
+    },
+    {
+      task: 'React',
+      isDone: false
+    },
+  ])
   return (
     <div>
-      <h1>Hello Janos, check out your todo list below!</h1>
+      <Greeting userName={userName} />
+      <Todolist />
       <ol>
         <li>Food shopping <button>Mark as complete</button> <button>Delete</button></li>
         <li>Project <button>Mark as complete</button> <button>Delete</button></li>
