@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Greeting from './components/Greeting';
 import Todolist from './components/Todolist';
+import AddTodo from './components/AddTodo';
 import './App.css'
 function App() {
 
@@ -8,30 +9,33 @@ function App() {
   const [todos, setTodos] = useState([
     {
       task: 'Food shopping',
-      isDone: false
+      isDone: true,
+      id: 1
     },
     {
       task: 'Project',
-      isDone: false
+      isDone: false,
+      id: 2
     },
     {
       task: 'React',
-      isDone: false
+      isDone: false,
+      id: 3
     },
   ])
+
+  const newTodo = (task) => {
+    const newTodos = [...todos, task]
+    setTodos(newTodos)
+    console.log('new todo: ' + task)
+    console.log(todos)
+  }
+
   return (
     <div>
       <Greeting userName={userName} />
-      <Todolist />
-      <ol>
-        <li>Food shopping <button>Mark as complete</button> <button>Delete</button></li>
-        <li>Project <button>Mark as complete</button> <button>Delete</button></li>
-        <li>React <button>Mark as complete</button> <button>Delete</button></li>
-      </ol>
-      <form>
-        <input type='text' value='Enter new todo'></input>
-        <button>Add todo</button>
-      </form>
+      <Todolist tasks={todos} />
+      <AddTodo addNew={newTodo} />
     </div>
   );
 }

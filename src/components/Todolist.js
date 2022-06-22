@@ -1,7 +1,13 @@
 import Todo from "./Todo"
-const Todolist = () => {
+const Todolist = ({ tasks }) => {
+
     return (
-        <Todo />
+        <>
+            {tasks.map((task) => (
+                <Todo key={task.id} task={task.task} completion={task.isDone} />
+            ))}
+        </>
+
     )
 }
 

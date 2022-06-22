@@ -2,13 +2,9 @@ import React from 'react'
 import Completebtn from './Completebtn'
 import Deletebtn from './Deletebtn'
 
-const Todo = () => {
+const Todo = ({ task, completion }) => {
     return (
-        <div>
-            1.Todohere
-            <Completebtn />
-            <Deletebtn />
-        </div>
+        <p className={completion ? 'complete' : ''}>{task}</p>
     )
 }
 
