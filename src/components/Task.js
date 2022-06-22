@@ -3,12 +3,10 @@ import { useState } from 'react'
 
 const Task = ({ task, markComplete }) => {
 
-    const [todoStatus, setTodoStatus] = useState({ task })
-
     const markCompleteBtn = (e) => {
         e.preventDefault();
-
-        markComplete(task.id, task.isDone)
+        const accessId = task.id
+        markComplete(accessId)
     }
     return (
         <div className={task.isDone ? 'todoItem completed' : 'todoItem'}>

@@ -27,12 +27,17 @@ function App() {
     },
   ])
 
-  const markComplete = (id, status) => {
-    console.log(id, status)
+  const markComplete = (id) => {
+    todoList.findIndex((task, index) => {
+      if (task.id === id) {
+        const updatedStatus = { id: task.id, task: task.task, isDone: true }
+        todoList.splice(index, 1)
+        setTodoList([updatedStatus, ...todoList])
+      }
+    })
   }
 
   const addNew = (task) => {
-
     const id = Math.floor(Math.random() * 10000) + 1
     const newTask = { id, task: task, isDone: false }
     console.log(newTask)
