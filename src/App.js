@@ -21,6 +21,7 @@ function App() {
         </div>
       </section>
 
+      <h3>Completed tasks</h3>
       <section className='todoList completed'>
         <div className='todoItem completed'>
           <p>Work out</p>
@@ -32,7 +33,8 @@ function App() {
         </div>
       </section>
 
-      <form>
+      <h3>Add new task</h3>
+      <form className='addNewForm'>
         <input type='text'></input>
         <button>Add todo</button>
       </form>
