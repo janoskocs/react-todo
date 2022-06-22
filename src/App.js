@@ -37,6 +37,15 @@ function App() {
     })
   }
 
+  const deleteTask = (id) => {
+    todoList.findIndex((task, index) => {
+      if (task.id === id) {
+        todoList.splice(index, 1)
+        setTodoList([...todoList])
+      }
+    })
+  }
+
   const addNew = (task) => {
     const id = Math.floor(Math.random() * 10000) + 1
     const newTask = { id, task: task, isDone: false }
@@ -52,7 +61,7 @@ function App() {
 
       <h3>Completed tasks</h3>
 
-      <Todolist todoList={todoList.filter((task) => (task.isDone && task))} /> {/*Filter tasks if they are done and render them in the complete section */}
+      <Todolist deleteTask={deleteTask} todoList={todoList.filter((task) => (task.isDone && task))} /> {/*Filter tasks if they are done and render them in the complete section */}
 
       <h3>Add new task</h3>
 

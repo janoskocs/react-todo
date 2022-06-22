@@ -1,12 +1,12 @@
 import React from 'react'
 import Task from './Task'
 
-const TodoList = ({ todoList, markComplete }) => {
+const TodoList = ({ todoList, markComplete, deleteTask }) => {
 
     return (
         <section className='todoList'>
             {todoList.map((task) => (
-                <Task markComplete={markComplete} key={task.id} task={task} />
+                <Task deleteTask={deleteTask} markComplete={markComplete} key={task.id} task={task} />
             ))}
         </section>
     )
