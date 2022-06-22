@@ -1,41 +1,41 @@
-import { useState } from 'react';
-import Greeting from './components/Greeting';
-import Todolist from './components/Todolist';
-import AddTodo from './components/AddTodo';
 import './App.css'
 function App() {
 
-  const userName = 'Janos'
-  const [todos, setTodos] = useState([
-    {
-      task: 'Food shopping',
-      isDone: true,
-      id: 1
-    },
-    {
-      task: 'Project',
-      isDone: false,
-      id: 2
-    },
-    {
-      task: 'React',
-      isDone: false,
-      id: 3
-    },
-  ])
-
-  const newTodo = (task) => {
-    const newTodos = [...todos, task]
-    setTodos(newTodos)
-    console.log('new todo: ' + task)
-    console.log(todos)
-  }
 
   return (
-    <div>
-      <Greeting userName={userName} />
-      <Todolist tasks={todos} />
-      <AddTodo addNew={newTodo} />
+    <div className='appContainer'>
+      <h1>Amazing Todo App</h1>
+
+      <section className='todoList'>
+        <div className='todoItem'>
+          <p>Food Shopping</p>
+          <button>Mark as complete</button>
+        </div>
+        <div className='todoItem'>
+          <p>Build projects</p>
+          <button>Mark as complete</button>
+        </div>
+        <div className='todoItem'>
+          <p>File taxes</p>
+          <button>Mark as complete</button>
+        </div>
+      </section>
+
+      <section className='todoList completed'>
+        <div className='todoItem completed'>
+          <p>Work out</p>
+          <button>Delete</button>
+        </div>
+        <div className='todoItem completed'>
+          <p>Cook dinner</p>
+          <button>Delete</button>
+        </div>
+      </section>
+
+      <form>
+        <input type='text'></input>
+        <button>Add todo</button>
+      </form>
     </div>
   );
 }
