@@ -55,7 +55,9 @@ function App() {
   return (
     <div className='appContainer'>
       <h1>Amazing Todo App</h1>
+      <h3>Add new task</h3>
 
+      <AddTask addNew={addNew} />
       <h3>Pending tasks</h3>
       {todoList.length > 0 ? <Todolist markComplete={markComplete} todoList={todoList.filter((task) => (!task.isDone && task))} /> : 'No tasks'} {/*Check if there are tasks in the array, if so check if they are not complete to render them in the pending task section*/}
 
@@ -63,9 +65,7 @@ function App() {
 
       <Todolist deleteTask={deleteTask} todoList={todoList.filter((task) => (task.isDone && task))} /> {/*Filter tasks if they are done and render them in the complete section */}
 
-      <h3>Add new task</h3>
 
-      <AddTask addNew={addNew} />
 
     </div>
   );
