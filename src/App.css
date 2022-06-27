@@ -1,26 +1,42 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: palevioletred;
+  font-family: "Orbitron", sans-serif;
+}
+
+body button {
+  padding: 0.5em;
+  border: 3px solid black;
+  -webkit-box-shadow: 3px 3px black;
+          box-shadow: 3px 3px black;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+}
+
+body button:active {
+  background-color: rebeccapurple;
+  -webkit-box-shadow: 0px 1px black;
+          box-shadow: 0px 1px black;
 }
 
 .appContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100vh;
-  background-color: cornflowerblue;
+  width: 80%;
+  margin: 2em auto;
+  background-color: blueviolet;
+  border: 3px solid black;
+  -webkit-box-shadow: 6px 6px black;
+          box-shadow: 6px 6px black;
+  text-align: center;
 }
 
 .appContainer h1 {
   margin: 1em;
+  font-size: 3em;
+  text-align: center;
 }
 
 .appContainer h3 {
@@ -33,7 +49,6 @@
 }
 
 .appContainer .todoList .todoItem {
-  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,8 +58,12 @@
   padding: 1em;
   border: 1px solid black;
   border-radius: 3px;
-  margin: 0.5em;
-  background-color: blue;
+  margin: 1em;
+  background-color: #ff1e00;
+  border: 3px solid black;
+  -webkit-box-shadow: 3px 3px black;
+          box-shadow: 3px 3px black;
+  gap: 2em;
 }
 
 .appContainer .todoList .todoItem:hover {
@@ -53,10 +72,6 @@
 
 .appContainer .todoList .todoItem p {
   color: #fff;
-}
-
-.appContainer .todoList .todoItem button {
-  padding: 0.3em;
 }
 
 .appContainer .todoList .completed {
@@ -75,6 +90,20 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 1em auto;
+  width: 50%;
+  gap: 1em;
+}
+
+.appContainer .addNewForm input {
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  padding: 0.3em;
+  font-size: 1.3em;
+  color: purple;
+  outline: 1px solid yellow;
+  max-width: 100%;
 }
 /*# sourceMappingURL=App.css.map */

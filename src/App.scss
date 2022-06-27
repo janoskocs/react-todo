@@ -1,18 +1,44 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+
+}
+
+$main-font: 'Orbitron', sans-serif;
+
+
+body {
+    background-color: palevioletred;
+    font-family: $main-font;
+
+    button {
+        padding: 0.5em;
+        border: 3px solid black;
+        box-shadow: 3px 3px black;
+        cursor: pointer;
+        font-family: $main-font;
+
+        &:active {
+            background-color: rebeccapurple;
+            box-shadow: 0px 1px black;
+        }
+    }
 }
 
 .appContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    background-color: cornflowerblue;
+
+    width: 80%;
+    margin: 2em auto;
+    background-color: blueviolet;
+    border: 3px solid black;
+    box-shadow: 6px 6px black;
+    text-align: center;
 
     h1 {
         margin: 1em;
+        font-size: 3em;
+
+        text-align: center;
     }
 
     h3 {
@@ -26,15 +52,19 @@
 
     .todoList {
 
+
         .todoItem {
-            width: 300px;
+
             display: flex;
             justify-content: space-between;
             padding: 1em;
             border: 1px solid black;
             border-radius: 3px;
-            margin: 0.5em;
-            background-color: blue;
+            margin: 1em;
+            background-color: rgb(255, 30, 0);
+            border: 3px solid black;
+            box-shadow: 3px 3px black;
+            gap: 2em;
 
             &:hover {
                 background-color: lightblue;
@@ -44,10 +74,7 @@
                 color: #fff;
             }
 
-            button {
-                padding: 0.3em;
 
-            }
         }
 
         .completed {
@@ -62,6 +89,20 @@
     .addNewForm {
         display: flex;
         flex-direction: row;
-        margin: 1em;
+        flex-wrap: wrap;
+        margin: 1em auto;
+        width: 50%;
+        gap: 1em;
+
+        input {
+            font-family: $main-font;
+            text-align: center;
+            padding: 0.3em;
+            font-size: 1.3em;
+            color: purple;
+            outline: 1px solid yellow;
+            max-width: 100%;
+        }
+
     }
 }
